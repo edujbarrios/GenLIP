@@ -2,7 +2,7 @@
 
 <h1>Let ViT Speak: Generative Language-Image Pre-training</h1>
 
-<b>Yan Fang</b><sup>1,2,*</sup> · <b>Mengcheng Lan</b><sup>2,3,*</sup> · <b>Zilong Huang</b><sup>2,&dagger;</sup> · <b>Weixian Lei</b><sup>2</sup> · <b>Yunqing Zhao</b><sup>2</sup> · <b>Yujie Zhong</b><sup>2</sup> · <b>Yingchen Yu</b><sup>2</sup> · <b>Qi She</b><sup>2</sup> · <b>Yao Zhao</b><sup>1</sup> · <b>Yunchao Wei</b><sup>1,&dagger;</sup>
+<b>Yan Fang</b><sup>1,2,&#42;</sup> · <b>Mengcheng Lan</b><sup>2,3,&#42;</sup> · <b>Zilong Huang</b><sup>2,&dagger;</sup> · <b>Weixian Lei</b><sup>2</sup> · <b>Yunqing Zhao</b><sup>2</sup> · <b>Yujie Zhong</b><sup>2</sup> · <b>Yingchen Yu</b><sup>2</sup> · <b>Qi She</b><sup>2</sup> · <b>Yao Zhao</b><sup>1</sup> · <b>Yunchao Wei</b><sup>1,&dagger;</sup>
 
 Beijing Jiaotong University<sup>1</sup> & Bytedance<sup>2</sup> & Nanyang Technological University<sup>3</sup>
 
