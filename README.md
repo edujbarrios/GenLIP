@@ -7,7 +7,7 @@
 Beijing Jiaotong University<sup>1</sup> & Bytedance<sup>2</sup> & Nanyang Technological University<sup>3</sup>
 
 
-<a href="https://huggingface.co/YanFang/GenLIP"><img src='https://img.shields.io/badge/Model-HuggingFace-orange' alt='Model HuggingFace'></a>
+<a href="https://huggingface.co/collections/YanFang/genlip"><img src='https://img.shields.io/badge/Model-HuggingFace-orange' alt='Model HuggingFace'></a>
 </div>
 
 ---
