@@ -1,0 +1,48 @@
+model:
+  config_path: "configs/model_configs/genlip/genlip_g16_224.json"
+  attn_implementation: sdpa
+  tokenizer: "Qwen/Qwen3-0.6B"                        # use text tokenizer from qwen
+  image_processor: "google/siglip2-base-patch16-224"  # use siglip2 image processor
+  use_flex_attn: true
+
+data:
+  train_path: path_to_recap_datacomp_1B
+  source_name: "recap_datacomp_1b"
+  chat_template: qwen2vl_pretrain
+  train_size: 270_000_000_000                         # estimated tokens for 1B samples 
+  dataloader_type: native
+  datasets_type: iterable_wds
+  num_workers: 8
+  prefetch_factor: 4
+  max_seq_len: 16384                                  # max packed sequence length
+  drop_last: true
+
+train:
+  freeze_emb_tok: false
+  freeze_lm_head: false
+  output_dir: path_to_output
+  step2token_path: path_to_output                     # same to output_dir
+  data_parallel_mode: fsdp1
+  micro_batch_size: 16                                # micro batch size for packed sequences, this will results in [B, L=16384] training batches
+  bsz_warmup_ratio: 0.0
+  rmpad: false
+  rmpad_with_pos_ids: true
+  optimizer: adamw
+  max_grad_norm: 1.0
+  lr: 1e-3
+  lr_warmup_ratio: 0.007
+  lr_decay_style: cosine
+  lr_decay_ratio: 1.0
+  lr_min: 1e-6
+  weight_decay: 0.01
+  enable_gradient_checkpointing: true
+  init_device: cpu
+  num_train_epochs: 8
+  max_steps: 33000                                     # max_steps per epoch
+  save_steps: 10000
+  save_hf_weights: true
+  use_wandb: true
+  enable_mixed_precision: true
+  wandb_project: wandb_project_name
+  wandb_name: wandb_exp_name
+  load_checkpoint_path: null                          # use it if you want to resume training

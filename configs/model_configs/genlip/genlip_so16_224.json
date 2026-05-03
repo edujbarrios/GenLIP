@@ -1,0 +1,41 @@
+{
+  "architectures": [
+    "GenLIPModel"
+  ],
+  "model_type": "genlip",
+  "num_hidden_layers":27,
+  "num_channels": 3,
+  "hidden_size": 1152,
+  "intermediate_size": 3072,
+  "num_attention_heads": 16,
+  "patch_size": 16,
+  "attention_dropout": 0.0,
+  "hidden_act": "silu",
+  "use_swiglu_ffn": true,
+  "ls_init_value": 0.1,
+  "drop_path_rate": 0.1,
+  "initializer_range": 0.02,
+  "text_embed_dim": 1024,
+  "torch_dtype": "bfloat16",
+  "vocab_size": 151936,
+  "max_position_embeddings": 16384,
+  "use_llm_head": false,
+  "llm_decoder": null,
+  "use_liger_kernel": true,
+  "tokens_per_second": 2,
+  "spatial_merge_size": 1,
+  "vision_start_token_id": 151652,
+  "vision_end_token_id": 151653,
+  "gated_attention": true,
+  "mrope_interleaved": true,
+  "rope_theta": 10000.0,
+  "rope_scaling": {
+      "type": "mrope",
+      "mrope_section": [
+        12,
+        12,
+        12
+      ]
+  },
+  "tie_word_embeddings": false
+}

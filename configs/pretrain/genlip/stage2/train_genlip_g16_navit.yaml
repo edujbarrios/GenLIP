@@ -1,0 +1,55 @@
+model:
+  model_path: /path_to_model_stage1
+  config_path: "configs/model_configs/genlip/GenLIP-g16-224.json"
+  attn_implementation: sdpa
+  tokenizer: "Qwen/Qwen3-0.6B"
+  image_processor: "google/siglip2-base-patch16-224"
+  use_flex_attn: true
+
+data:
+  train_path: "path1;path2;path3"       # pathes to multiple caption dataset, separated by ";"
+  source_name: "mmpretrain_mixed"
+  chat_template: qwen2vl_pretrain
+  train_size: 100_000_000_000           # 100B
+  dataloader_type: native
+  datasets_type: iterable_wds_api
+  num_workers: 8
+  prefetch_factor: 4
+  max_seq_len: 16384
+  drop_last: true
+  pure_mm: true
+  mm_configs:                           # this setting will make training run in navit mode
+    min_pixels: 4096                    # 16 * 16 * 16 -> 64 * 64
+    max_pixels: 262144                  # 1024 * 16 * 16 -> 512 * 512
+    patch_size: 16
+    temporal_patch_size: 1
+    merge_size: 1
+    resample: 2
+    image_mean: [0.5, 0.5, 0.5]
+    image_std: [0.5, 0.5, 0.5]
+
+train:
+  output_dir: /path_to_output
+  step2token_path: /path_to_output
+  data_parallel_mode: fsdp1
+  micro_batch_size: 16
+  bsz_warmup_ratio: 0.0
+  rmpad: false
+  rmpad_with_pos_ids: true
+  optimizer: adamw
+  max_grad_norm: 1.0
+  lr: 1e-4
+  lr_warmup_ratio: 0.007
+  lr_decay_style: cosine
+  lr_decay_ratio: 1.0
+  lr_min: 1e-6
+  weight_decay: 0.01
+  enable_gradient_checkpointing: true
+  init_device: cpu
+  max_steps: 12000                    # 100B tokens
+  save_steps: 10000
+  save_hf_weights: true
+  use_wandb: true
+  enable_mixed_precision: true
+  wandb_project: wandb_project_name
+  wandb_name: wandb_exp_name
