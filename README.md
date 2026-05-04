@@ -55,7 +55,7 @@ We use several caption datasets in our pretraining process:
 
 optional for stage2:
 - [[CapRL](https://huggingface.co/datasets/internlm/CapRL-2M)]: https://huggingface.co/datasets/internlm/CapRL-2M
-- [[PLM-Image-Auto](https://huggingface.co/datasets/facebook/PLM-Image-Auto)]: https://huggingface.co/datasets/facebook/PLM-Image-Auto (only capiton parts)
+- [[PLM-Image-Auto](https://huggingface.co/datasets/facebook/PLM-Image-Auto)]: https://huggingface.co/datasets/facebook/PLM-Image-Auto (only caption parts)
 
 All these datasets need to be downloaded and sort into suitable formats for effective pretraining.
 
