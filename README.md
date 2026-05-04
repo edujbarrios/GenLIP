@@ -2,12 +2,19 @@
 
 <h1>Let ViT Speak: Generative Language-Image Pre-training</h1>
 
-<b>Yan Fang</b><sup>1,2,&#42;</sup> · <b>Mengcheng Lan</b><sup>2,3,&#42;</sup> · <b>Zilong Huang</b><sup>2,&dagger;</sup> · <b>Weixian Lei</b><sup>2</sup> · <b>Yunqing Zhao</b><sup>2</sup> · <b>Yujie Zhong</b><sup>2</sup> · <b>Yingchen Yu</b><sup>2</sup> · <b>Qi She</b><sup>2</sup> · <b>Yao Zhao</b><sup>1</sup> · <b>Yunchao Wei</b><sup>1,&dagger;</sup>
+<b>Yan Fang</b><sup>1,2,&#42;</sup> · <b><a href="https://mc-lan.github.io">Mengcheng Lan</a></b><sup>2,3,&#42;</sup> · <b><a href="https://speedinghzl.github.io">Zilong Huang</a></b><sup>2,&dagger;</sup> · <b>Weixian Lei</b><sup>2</sup> · <b><a href="https://yunqing-me.github.io">Yunqing Zhao</a></b><sup>2</sup> · <b><a href="https://y-zhong.info">Yujie Zhong</a></b><sup>2</sup> · <b><a href="https://yingchen001.github.io">Yingchen Yu</a></b><sup>2</sup> · <b><a href="https://qi-she.net/">Qi She</a></b><sup>2</sup> · <b>Yao Zhao</b><sup>1</sup> · <b><a href="https://weiyc.github.io">Yunchao Wei</a></b><sup>1,&dagger;</sup>
 
 Beijing Jiaotong University<sup>1</sup> & Bytedance<sup>2</sup> & Nanyang Technological University<sup>3</sup>
 
+<a href="https://yanfangcs.github.io/vitspeak"><img src="https://img.shields.io/badge/Github-Page-blue" alt="Home Page"></a>
+<a href="https://arxiv.org/abs/2605.00809"><img src="https://img.shields.io/badge/Paper-Arxiv-red" alt="Paper Arxiv"></a>
+<a href="https://huggingface.co/collections/YanFang/genlip"><img src="https://img.shields.io/badge/Model-HuggingFace-orange" alt="Model HuggingFace"></a>
+</div>
 
-<a href="https://huggingface.co/collections/YanFang/genlip"><img src='https://img.shields.io/badge/Model-HuggingFace-orange' alt='Model HuggingFace'></a>
+**TL;DR:** **GenLIP - lets ViT speak.** We show that a strong MLLM vision encoder can be pretrained with just **one Transformer** and **one autoregressive language modeling objective**—no contrastive loss, no dual-tower architecture, and no extra text decoder. Despite its simplicity, GenLIP scales effectively and performs well as a vision encoder in MLLMs, with particularly strong gains on Doc&OCR tasks.
+
+<div align='center'>
+  <img src="assets/teaser.png" alt="teaser" style="height: 200px; width: auto;">
 </div>
 
 ---
@@ -89,3 +96,16 @@ Our codebase is built upon:
 
 ## 📄 License
 This project is licensed under Apache License 2.0. See the `LICENSE` file for details.
+
+
+## Citation and Acknowledgement
+If you find this project helpful, please give us a star ⭐ and cite our [paper](https://arxiv.org/pdf/2605.00809):
+
+```bibtex
+@article{fang2026letvitspeakgenerative,
+  title={Let ViT Speak: Generative Language-Image Pre-training}, 
+  author={Yan Fang and Mengcheng Lan and Zilong Huang and Weixian Lei and Yunqing Zhao and Yujie Zhong and Yingchen Yu and Qi She and Yao Zhao and Yunchao Wei},
+  journal={arXiv preprint arXiv:2605.00809},
+  year={2026}
+}
+```
