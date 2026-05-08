@@ -86,7 +86,7 @@ All you need to do is to set the paths and appropriate hyperparameters in the co
 
 ## Model Checkpoints
 
-The models are available at https://huggingface.co/YanFang/GenLIP .
+The models are available at [[huggingface](https://huggingface.co/collections/YanFang/genlip)].
 
 
 ## Acknowledgments
