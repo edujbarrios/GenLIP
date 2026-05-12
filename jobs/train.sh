@@ -2,8 +2,6 @@ set -x
 
 export TOKENIZERS_PARALLELISM=false
 
-export WANDB_API_KEY=85a9af306647386ae7b1fb87e60fb0fcbb2c11e9
-
 
 NODE_RANK=0
 NNODES=1
