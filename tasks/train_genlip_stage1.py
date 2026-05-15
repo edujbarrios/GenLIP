@@ -693,6 +693,10 @@ def main():
             if hasattr(grad_norm, "full_tensor"):
                 grad_norm = grad_norm.full_tensor().item()
 
+            # empty cache in the first few steps to save memory
+            if global_step <= 3:
+                torch.cuda.empty_cache()
+
             # collect mean loss across data parallel group
             total_loss, grad_norm = all_reduce((total_loss, grad_norm), group=get_parallel_state().fsdp_group)
             torch.cuda.synchronize()

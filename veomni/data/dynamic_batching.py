@@ -296,6 +296,11 @@ class DynamicBatchSizeDataLoader:
                 if self._prefetch_thread is not None:
                     self._prefetch_thread.join()
                 raise StopIteration
+            # Check if the batch is actually an exception from the prefetch thread
+            if isinstance(batch, BaseException):
+                if self._prefetch_thread is not None:
+                    self._prefetch_thread.join()
+                raise batch
             return batch
         # Otherwise, use the original generator
         else:
@@ -343,8 +348,27 @@ class DynamicBatchSizeDataLoader:
             except Exception as e:
                 if isinstance(e, StopIteration):
                     if self.step < self._length:
-                        self._data_iter = iter(self._dataloader)
-                        processing_item = next(self._data_iter)
+                        # Rebuild iterator with retry protection against immediate StopIteration
+                        max_rebuild_attempts = 3
+                        rebuilt = False
+                        for attempt in range(max_rebuild_attempts):
+                            try:
+                                self._data_iter = iter(self._dataloader)
+                                processing_item = next(self._data_iter)
+                                rebuilt = True
+                                break
+                            except StopIteration:
+                                logger.warning(
+                                    f"Data iterator rebuild attempt {attempt + 1}/{max_rebuild_attempts} "
+                                    f"immediately exhausted at step {self.step}/{self._length}."
+                                )
+                                continue
+                        if not rebuilt:
+                            logger.error(
+                                f"Failed to rebuild data iterator after {max_rebuild_attempts} attempts "
+                                f"at step {self.step}/{self._length}. Stopping iteration."
+                            )
+                            return
                     elif not self._drop_last and not self.batching_strategy.empty():
                         # This part handles the final, potentially incomplete batch
                         while not self.batching_strategy.empty():

@@ -288,7 +288,15 @@ class OmniDataCollatorWithPacking(DataCollator):
                 sample_ids.append(torch.full((input_length,), idx, dtype=torch.long))
             batch['sample_ids'] = torch.cat(sample_ids, dim=-1).unsqueeze(0)
         except Exception as e:
-            batch['error'] = torch.tensor([0])
+            import traceback
+            print(
+                f"[OmniDataCollatorWithPacking] Collation error: {e}\n"
+                f"Features count: {len(features)}, "
+                f"Feature keys: {[list(f.keys()) for f in features[:3]]}\n"
+                f"{traceback.format_exc()}",
+                flush=True,
+            )
+            raise
 
         return batch
     
