@@ -40,7 +40,5 @@ if __name__ == "__main__":
     logger.info(f"Merge to hf pt success! Save to: {save_dir}")
 
 
-# python scripts/merge_dcp_to_hf.py --load-dir "/mnt/bn/pistis/fangyan/exps/ViT-So16-Res224-v3-Pretrain-S8B/checkpoints/global_step_193119" --save-dir "/mnt/bn/pistis/fangyan/exps/ViT-So16-Res224-v3-Pretrain-S8B/checkpoints/global_step_193119/hf_ckpt" --model_assets_dir "/mnt/bn/pistis/fangyan/exps/ViT-So16-Res224-v3-Pretrain-S8B/model_assets"
-# python scripts/merge_dcp_to_hf.py --load-dir "/mnt/bn/pistis/fangyan/exps/ViT-L16-Res224-v3-Pretrain-S8B/checkpoints/global_step_128748" --save-dir "/mnt/bn/pistis/fangyan/exps/ViT-L16-Res224-v3-Pretrain-S8B/checkpoints/global_step_128748/hf_ckpt" --model_assets_dir "/mnt/bn/pistis/fangyan/exps/ViT-L16-Res224-v3-Pretrain-S8B/model_assets"
-# /mnt/bn/pistis/fangyan/exps/ViT-g16-Res224-v3-Pretrain-S8B/checkpoints/global_step_32187
-# python scripts/merge_dcp_to_hf.py --load-dir "/mnt/bn/pistis/fangyan/exps/ViT-g16-Res224-v3-Pretrain-S8B/checkpoints/global_step_32187" --save-dir "/mnt/bn/pistis/fangyan/exps/ViT-g16-Res224-v3-Pretrain-S8B/checkpoints/global_step_32187/hf_ckpt" --model_assets_dir "/mnt/bn/pistis/fangyan/exps/ViT-g16-Res224-v3-Pretrain-S8B/model_assets"
+# usage:
+# python scripts/merge_dcp_to_hf.py --load-dir exp1/checkpoint/global_step_N --save-dir exp1/checkpoint/global_step_N/hf_ckpt --model_assets_dir exp1/assets

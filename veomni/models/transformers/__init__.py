@@ -14,5 +14,6 @@
 
 from . import deepseek_v3, llama, qwen2, qwen2_vl
 from . import genlip
+from . import qwen3
 
-__all__ = ["qwen2_vl", "deepseek_v3", "qwen2", "llama", "genlip"]
+__all__ = ["qwen2_vl", "deepseek_v3", "qwen2", "llama", "genlip", "qwen3"]

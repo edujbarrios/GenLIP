@@ -9,8 +9,7 @@ attrs==25.3.0
 av==15.1.0
 blobfile==3.0.0
 braceexpand==0.1.7
-6f00167c153f3e65a67240aaa5ef4850a1c740fd
--e git+https://github.com/ByteDance-Seed/ByteCheckpoint.git@6f00167c153f3e65a67240aaa5ef4850a1c740fd4#egg=bytecheckpoint
+bytecheckpoint
 cachetools==6.1.0
 certifi==2025.6.15
 cffi==1.17.1

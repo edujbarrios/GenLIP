@@ -1,46 +1,36 @@
 {
-    "architectures": [
-      "Qwen3_ForConditionalGeneration"
-    ],
-    "attention_bias": false,
-    "attention_dropout": 0.0,
-    "bos_token_id": 151643,
-    "eos_token_id": 151643,
-    "hidden_act": "silu",
-    "hidden_size": 1024,
-    "initializer_range": 0.02,
-    "intermediate_size": 3072,
-    "max_position_embeddings": 16384,
-    "max_window_layers": 28,
-    "head_dim": 128,
-    "model_type": "qwen3_vl",
-    "num_attention_heads": 16,
-    "num_hidden_layers": 28,
-    "num_key_value_heads": 8,
-    "rms_norm_eps": 1e-06,
-    "rope_theta": 10000.0,
-    "sliding_window": null,
-    "tie_word_embeddings": true,
-    "torch_dtype": "bfloat16",
-    "use_cache": false,
-    "use_sliding_window": false,
-    "vision_start_token_id": 151652,
-    "vision_end_token_id": 151653,
-    "vocab_size": 151936,
-    "rope_scaling": {
-      "type": "mrope",
-      "mrope_section": [
-        16,
-        24,
-        24
-      ]
-    },
-    "vision_config": {
-      "image_size": 384,
-      "hidden_size": 1024,
-      "in_channels": 3, 
-      "patch_size": 16,
-      "vision_pe": "simple"
-    },
-    "pretrained_weights": "/mnt/bn/pistis/fangyan/model_ckpts/Qwen3-0.6B"
+  "architectures": [
+    "Qwen3ForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 151643,
+  "eos_token_id": 151645,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 1024,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "max_position_embeddings": 40960,
+  "max_window_layers": 28,
+  "model_type": "qwen3g",
+  "num_attention_heads": 16,
+  "num_hidden_layers": 28,
+  "num_key_value_heads": 8,
+  "rms_norm_eps": 1e-06,
+  "rope_theta": 10000.0,
+  "sliding_window": null,
+  "tie_word_embeddings": false,
+  "torch_dtype": "bfloat16",
+  "use_cache": false,
+  "use_sliding_window": false,
+  "vocab_size": 151936,
+  "patch_size": 16,
+  "gated_attention": true,
+  "mrope_interleaved": true,
+  "use_liger_kernel": true,
+  "rope_scaling": {
+    "type": "mrope",
+    "mrope_section": [ 16, 24, 24 ]
+  }
 }

@@ -1,5 +1,5 @@
 model:
-  config_path: "configs/model_configs/genlip/genlip_l16_224.json"
+  config_path: "configs/model_configs/qwen/Qwen3-0.6B.json"
   attn_implementation: sdpa
   tokenizer: "Qwen/Qwen3-0.6B"                        # use text tokenizer from qwen
   image_processor: "google/siglip2-base-patch16-224"  # use siglip2 image processor
