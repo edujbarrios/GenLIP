@@ -119,3 +119,4 @@ wrapt==1.17.2
 xxhash==3.5.0
 yacs==0.1.8
 yarl==1.20.1
+gradio>=4.0.0
