@@ -1,0 +1,19 @@
+model:
+  # Path to a model config directory or a single config JSON.
+  # This repository ships a few configs under `configs/model_configs/`.
+  config_path: "configs/model_configs/genlip/genlip_so16_224.json"
+
+  # Optional: override the tokenizer / processor assets source.
+  # If omitted, the pipeline will try to use `model.config_path`.
+  # tokenizer_path: "Qwen/Qwen2-VL-7B-Instruct"
+
+  # More portable default than flash-attn (especially on CPU-only setups).
+  attn_implementation: "sdpa"
+
+infer:
+  prompt: "Describe this image. <|vision_start|><|image_pad|><|vision_end|>"
+  do_generate: true
+  max_new_tokens: 128
+  temperature: 0.2
+  top_p: 0.9
+  image_size: 224

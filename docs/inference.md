@@ -8,7 +8,7 @@ Example:
 
 ```bash
 python scripts/infer.py \
-  --image examples/sample.jpg \
+  --image assets/teaser.png \
   --checkpoint checkpoints/model.pt \
   --config configs/infer.yaml \
   --device cuda \
@@ -56,4 +56,3 @@ The CLI prints a JSON object including:
 - `logits_shape` (when available on the model output)
 - `generated_text` (when generation is enabled and supported)
 - device/dtype metadata and basic timing
-
